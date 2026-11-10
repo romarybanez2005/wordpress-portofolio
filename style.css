@@ -1,0 +1,189 @@
+/*
+Theme Name: Ink St
+Author: Local Starter Themes
+Author URI: https://localstarterthemes.com
+Theme URI: https://localstarterthemes.com/theme/ink-st-pro/
+Description: A dark, moody block theme built for tattoo studios, piercing parlours, and body-art collectives. Deep noir surfaces, a tattoo-flash red accent, and bone-ivory typography give your site the atmosphere of a real ink shop. Starter patterns cover the hero, resident artists, a captioned portfolio, the studio story, a flash-sheet rate list, a journal, and a booking / visit section. Built 100% on native blocks — no page builder, no dependencies.
+Requires at least: 6.4
+Tested up to: 7.1
+Requires PHP: 7.4
+Version: 1.0.2
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: ink-st
+Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, block-patterns, wide-blocks, block-styles, portfolio
+*/
+
+html {
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* Keep anchored sections clear of the sticky header. */
+main [id] {
+    scroll-margin-top: 5rem;
+}
+
+.ink-st-header {
+    z-index: 20;
+}
+
+.ink-st-header .wp-block-site-title,
+.ink-st-header .wp-block-button__link {
+    white-space: nowrap;
+}
+
+/* Collapse the header menu into the overlay below 960px (core only does it below 600px). */
+@media screen and (min-width: 600px) and (max-width: 959px) {
+    .ink-st-header .wp-block-navigation__responsive-container-open:not(.always-shown) {
+        display: flex;
+    }
+
+    .ink-st-header .wp-block-navigation__responsive-container:not(.hidden-by-default):not(.is-menu-open) {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 959px) {
+    .ink-st-tagline {
+        display: none;
+    }
+
+    .wp-block-navigation__responsive-container.is-menu-open {
+        padding: 2rem !important;
+    }
+
+    .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content,
+    .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content ul.wp-block-navigation__container {
+        align-items: center !important;
+    }
+
+    .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container {
+        gap: var(--wp--preset--spacing--40) !important;
+    }
+
+    .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item__content {
+        font-size: 1.125rem;
+        letter-spacing: 0.25em;
+    }
+}
+
+.is-style-no-wrap {
+    white-space: nowrap;
+}
+
+.is-style-ink-stamp {
+    display: inline-block;
+    padding: 0.35em 0.75em;
+    border: 1px solid currentColor;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.is-style-ink-outline {
+    -webkit-text-stroke: 2px var(--wp--preset--color--primary, #e24b40);
+    color: transparent !important;
+}
+
+/* Comment form fields on dark (and light) surfaces. */
+.wp-block-post-comments-form input:not([type="submit"]):not([type="checkbox"]),
+.wp-block-post-comments-form textarea {
+    background-color: var(--wp--preset--color--surface-container, #171513);
+    color: var(--wp--preset--color--on-surface, #ede6d3);
+    border: 1px solid var(--wp--preset--color--outline-variant, #332f2c);
+    border-radius: 0;
+    padding: 0.75rem 1rem;
+}
+
+.wp-block-post-comments-form input:not([type="submit"]):not([type="checkbox"]):focus,
+.wp-block-post-comments-form textarea:focus {
+    outline: 2px solid var(--wp--preset--color--primary, #e24b40);
+    outline-offset: 1px;
+}
+
+/* Ledger rows: the fixed-width index / label column never shrinks. */
+.ink-st-row > :first-child {
+    flex-shrink: 0;
+}
+
+.ink-st-row > .wp-block-group {
+    min-width: 0;
+}
+
+.ink-st-rate-row > p:last-child {
+    flex-shrink: 0;
+}
+
+/* Small uppercase text links ("Portfolio →", "Full feed on Instagram →"). */
+.ink-st-link a {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.35em;
+}
+
+.ink-st-link a:hover,
+.ink-st-link a:focus-visible {
+    color: var(--wp--preset--color--primary, #e24b40);
+}
+
+.wp-block-navigation__responsive-container.is-menu-open {
+    background-color: var(--wp--preset--color--surface, #0c0a09) !important;
+    color: var(--wp--preset--color--on-surface, #ede6d3) !important;
+}
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .wp-block-navigation-item a {
+    color: var(--wp--preset--color--on-surface-variant, #b5ad9a) !important;
+}
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .wp-block-navigation-item a:hover {
+    color: var(--wp--preset--color--primary, #e24b40) !important;
+}
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-close-button {
+    color: var(--wp--preset--color--primary, #e24b40) !important;
+}
+
+@media screen and (max-width: 781px) {
+    .ink-st-hero-media .wp-block-cover {
+        min-height: 75vh !important;
+    }
+
+    .ink-st-artist-photo {
+        max-width: 320px;
+    }
+
+    .ink-st-rate-row .ink-st-price {
+        font-size: clamp(2rem, 9vw, 3rem) !important;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .ink-st-header-inner {
+        padding-left: var(--wp--preset--spacing--40) !important;
+        padding-right: var(--wp--preset--spacing--40) !important;
+    }
+
+    /* Rate rows: index on the left, name + description + price stacked on the right. */
+    .ink-st-rate-row {
+        display: grid !important;
+        grid-template-columns: 2.75rem minmax(0, 1fr);
+        column-gap: var(--wp--preset--spacing--30);
+        row-gap: var(--wp--preset--spacing--20);
+        align-items: start !important;
+    }
+
+    .ink-st-rate-row > p:first-child {
+        grid-row: 1 / span 2;
+    }
+
+    .ink-st-rate-row > p:last-child {
+        grid-column: 2;
+        text-align: left !important;
+    }
+}

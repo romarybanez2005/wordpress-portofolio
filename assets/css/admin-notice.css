@@ -1,0 +1,151 @@
+/* Ink St — welcome notice */
+
+@font-face {
+	font-family: "Ink St Playfair";
+	src: url("../fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf") format("truetype");
+	font-weight: 400 900;
+	font-display: swap;
+}
+
+#ink-st-notice {
+	border-left: 4px solid #e24b40;
+	padding: 0;
+	background: #fff;
+}
+
+.isn-wrap {
+	padding: 24px 40px 24px 24px;
+	max-width: 700px;
+	text-align: left;
+}
+
+/* Top: logo + brand name */
+.isn-top {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin-bottom: 16px;
+}
+
+.isn-logo {
+	width: 40px;
+	height: 40px;
+	border-radius: 6px;
+	object-fit: cover;
+	flex-shrink: 0;
+}
+
+.isn-tag {
+	font-size: 12px;
+	font-weight: 600;
+	letter-spacing: 0.06em;
+	color: #b02822;
+	text-transform: uppercase;
+}
+
+/* Title */
+.isn-title {
+	display: block;
+	font-family: "Ink St Playfair", Georgia, serif;
+	font-size: 22px;
+	font-weight: 700;
+	color: #0c0a09;
+	margin-bottom: 10px;
+}
+
+/* Description */
+.isn-desc {
+	font-size: 14px;
+	color: #5e5e5e;
+	line-height: 1.7;
+	margin: 0 0 8px;
+}
+
+#ink-st-notice .isn-desc {
+	padding: 0;
+}
+
+.isn-desc--pro {
+	color: #171513;
+	margin-bottom: 18px;
+}
+
+/* Stats row */
+.isn-stats {
+	display: flex;
+	margin-bottom: 20px;
+	border: 1px solid #ede6d3;
+	width: fit-content;
+}
+
+.isn-stat {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 10px 22px;
+	border-right: 1px solid #ede6d3;
+	min-width: 76px;
+}
+
+.isn-stat:last-child {
+	border-right: none;
+}
+
+.isn-stat-num {
+	font-family: "Ink St Playfair", Georgia, serif;
+	font-size: 22px;
+	font-weight: 700;
+	color: #0c0a09;
+	line-height: 1.2;
+}
+
+.isn-stat-label {
+	font-size: 10px;
+	color: #999;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	margin-top: 3px;
+}
+
+/* Actions */
+.isn-actions {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	flex-wrap: wrap;
+}
+
+.isn-btn {
+	font-size: 12px;
+	font-weight: 600;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	background: #0c0a09;
+	color: #e24b40 !important;
+	padding: 12px 24px;
+	text-decoration: none !important;
+	display: inline-block;
+	line-height: 1;
+	transition: background 0.15s;
+}
+
+.isn-btn:hover,
+.isn-btn:focus {
+	background: #2a2623 !important;
+	color: #e24b40 !important;
+}
+
+.isn-contact {
+	font-size: 13px;
+	color: #777;
+}
+
+.isn-contact a {
+	color: #0c0a09 !important;
+	text-decoration: underline !important;
+	text-underline-offset: 2px;
+}
+
+.isn-contact a:hover {
+	color: #b02822 !important;
+}
